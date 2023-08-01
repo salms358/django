@@ -28,10 +28,16 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.environ.get('CLOUD_NAME'),
+    'API_KEY': os.environ.get('API_KEY'),
+    'API_SECRET': os.environ.get('API_SECRET'),
+}
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["mb2test.herokuapp.com", "localhost"]
+ALLOWED_HOSTS = ["blogz.herokuapp.com", "localhost"]
 
 
 # Application definition
@@ -59,11 +65,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': os.environ.get('dzmsrpyit'),
-    'API_KEY': os.environ.get('CLOUDINARY_URL=cloudinary://493662479925194:XFq8HARMRsoO9ccNMXYrDLO19no@dzmsrpyit'),
-    'API_SECRET': os.environ.get('XFq8HARMRsoO9ccNMXYrDLO19no'),
-}
+
 
 ROOT_URLCONF = 'codestar.urls'
 
